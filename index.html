@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ancient Greek Themed Poem</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', serif;
+            background-color: #f4e8c1;
+            text-align: center;
+            padding: 20px;
+        }
+        #content {
+            font-size: 20px;
+            color: #4a3624;
+            width: 60%;
+            height: 80vh;
+            margin: auto;
+            padding: 20px;
+            border: 2px solid #4a3624;
+            background-color: #fff8dc;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+        #image {
+            margin-top: 20px;
+            width: 20%;
+        }
+        .sentence {
+            opacity: 0;
+            transition: opacity 1s ease-in;
+        }
+    </style>
+</head>
+<body>
+    <h1>Echoes of Plato</h1>
+    <div id="content">
+        <img id="image" src="https://cdn.britannica.com/75/177675-050-BFA26F0C/detail-Aristotle-School-of-Athens-Plato-Raphael.jpg" alt="The School of Athens">
+    </div>
+    <script>
+        const text = [            
+            "The natural philosopher, in our state, in which his knowledge of human nature, is hardly worth repeating...",
+            "And if a person of Alcibiades, the result methinks would be a body, each claiming precedence...",
+            "Then about what does the worship of the one to be most intense.",
+            "Then he desired that all these arts were reckoned mean by knowledge, the only time...",
+            "As there are rogues.",
+            "Thus doing is good of his own affairs; and in the same punishment.",
+            "Therefore a part of the elements out of either, ought to go round...",
+            "Certainly not; the motive, however, of the Elizabethan age, they shall be the case of all the pre-Socratic philosophers...",
+            "Then the Sophist the question from another land and the members is subject...",
+            "However, when a man who is wise, will do both, said Eryximachus: I will endeavour to find Plato criticizing...",
+            "Why, Socrates, they say; not, however, any definite character in the one.",
+            "No, nor am I, for this is the same thing be or look down, but she clasping about the great company...",
+            "Many of them with beauty, and then both just and honorable procession..."
+        ];
+
+        let index = 0;
+        function displayNextSentence() {
+            if (index < text.length) {
+                const sentence = document.createElement("p");
+                sentence.textContent = text[index];
+                sentence.classList.add("sentence");
+                document.getElementById("content").appendChild(sentence);
+                setTimeout(() => sentence.style.opacity = 1, 50);
+                index++;
+                setTimeout(displayNextSentence, 1000);
+            }
+        }
+        displayNextSentence();
+    </script>
+</body>
+</html>
